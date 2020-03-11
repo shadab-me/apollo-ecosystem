@@ -1,6 +1,13 @@
 const graphql = require('graphql');
 const {GraphQLObjectType} = graphql;
- const BookType = new GraphQLObjectType({
+ 
+var books = [
+    {name: 'Name of the Wind', genre: 'Fantasy', id:'1'},
+    {name: 'The Final Empire', genre: 'Fantasy', id:'2'},
+    {name: 'The Long Earth', genre:'Sci-Fi', id:'3'},
+];
+
+const BookType = new GraphQLObjectType({
      name:'Book',
      fields: () => ({
        id: {type:GraphQLString},
@@ -24,4 +31,6 @@ const {GraphQLObjectType} = graphql;
      }
  });
  
-  
+  module.exports = new GraphQlSchema({
+      query:RootQuery
+  })
